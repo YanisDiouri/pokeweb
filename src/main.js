@@ -3,6 +3,9 @@ import './style.css'
 
 'use strict';
 
+let allPokemon = [];
+
+
 const getPokemon = async () => {
   const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");
   const data = await response.json();
@@ -11,7 +14,7 @@ const getPokemon = async () => {
   pokeList.forEach(async (pokemon) => {
     const dataPokemon = await fetch(pokemon.url);
     const pokemonDetails = await dataPokemon.json();
-
+    allPokemon.push(pokemonDetails);
 
     createPokemonCard(pokemonDetails);
   });
@@ -21,7 +24,7 @@ const createPokemonCard = (pokemon) => {
   const card = document.createElement("div");
   card.classList.add("pokemon-card");
   card.id = `card-${pokemon.id}`;
-  
+
   const img = document.createElement("img");
   img.src = pokemon.sprites.front_default;
   img.alt = pokemon.name;
@@ -81,5 +84,25 @@ document.getElementById("search").addEventListener("input", (e) => {
     card.style.display = name.includes(query) ? "block" : "none";
   });
 });
+
+document.getElementById("typeFilter").addEventListener("change", (e) => {
+  const selectedType = e.target.value;
+  document.querySelectorAll(".pokemon-card").forEach(card => {
+    const types = card.querySelector("p").textContent.toLowerCase();
+    card.style.display = types.includes(selectedType) || !selectedType ? "block" : "none";
+  });
+});
+
+document.getElementById("sortOptions").addEventListener("change", (e) => {
+  const criterion = e.target.value;
+  allPokemon.sort((a, b) => {
+    if (criterion === "name") return a.name.localeCompare(b.name);
+    return a[criterion] - b[criterion];
+  });
+  document.getElementById("pokemonList").innerHTML = "";
+  allPokemon.forEach(createPokemonCard);
+});
+
+
 
 getPokemon();
