@@ -10,20 +10,22 @@
 
 <body>
   <header>
-    <input type="text" id="search" placeholder="Rechercher un Pokémon" />
+    <input type="text" id="search" placeholder="Search a Pokémon" />
 
     <select id="typeFilter">
-      <option value="">Tous</option>
+      <option value="">All</option>
       <option value="fire">Fire</option>
       <option value="water">Water</option>
     </select>
 
     <select id="sortOptions">
-      <option value="name">Nom</option>
-      <option value="height">Taille</option>
-      <option value="weight">Poids</option>
-    </select>    
-    
+      <option value="name">Name</option>
+      <option value="height">Size</option>
+      <option value="weight">Weight</option>
+    </select>
+
+    <button id="toggleFavoritesBtn">Show Favorite</button>
+
   </header>
   <div id="pokemonList" class="pokemon-container"></div>
   <script type="module" src="/src/main.js"></script>
