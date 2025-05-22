@@ -1,51 +1,49 @@
-/* Reset général */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
 }
 
-/* Header */
 header {
-  background-color: #ffffff;
-  padding: 15px 30px;
+  background-color: #fff;
+  padding: 16px 32px;
   display: flex;
-  gap: 15px;
+  gap: 16px;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 header input,
 header select,
 header button {
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
   background-color: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: 0.2s;
 }
 
 header input:focus,
 header select:focus {
   outline: none;
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
 }
 
 header button {
-  background-color: #4a90e2;
-  color: white;
+  background-color: #3b82f6;
+  color: #fff;
   border: none;
-  cursor: pointer;
+  font-weight: 500;
 }
 
 header button:hover {
-  background-color: #357abd;
+  background-color: #2563eb;
 }
 
 /* Grille Pokémon */
@@ -110,24 +108,157 @@ header button:hover {
   color: #333;
 }
 
-/* Étoile favoris */
+/* Bouton étoile favori */
 .fav-btn {
   background: none;
   border: none;
-  font-size: 1.2rem;
   cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px;
-  transition: color 0.2s;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.fav-btn.active {
-  color: gold;
+.fav-btn .star-icon {
+  fill: none;
+  stroke: gray;
+  transition: fill 0.3s ease;
 }
 
-.fav-btn:hover {
-  color: goldenrod;
+.fav-btn.active .star-icon {
+  fill: gold;
+  stroke: gold;
 }
 
 
+.fav-btn:hover .star-icon {
+  stroke: #ff9800;
+  fill: #ffe082;
+}
+
+.dex-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  background: #f9fafb;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dex-left img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.dex-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.dex-right h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.dex-id {
+  color: #6b7280;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.types {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.type-badge {
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+}
+
+.type-badge.fire { background-color: #f08030; }
+.type-badge.water { background-color: #6890f0; }
+.type-badge.grass { background-color: #78c850; }
+.type-badge.dragon { background-color: #7038f8; }
+.type-badge.flying { background-color: #a890f0; }
+.type-badge.normal { background-color: #15d8d2; }
+.type-badge.electric { background-color: #f3d708; }
+
+.stats {
+  margin-top: 20px;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.stat span {
+  width: 120px;
+  font-size: 0.9rem;
+}
+
+.bar {
+  background: #e5e7eb;
+  border-radius: 6px;
+  flex: 1;
+  height: 10px;
+  margin: 0 10px;
+}
+
+.fill {
+  background: #3b82f6;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.stat-value {
+  width: 30px;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.dex-right button {
+  margin-top: 25px;
+  padding: 10px 18px;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.dex-right button:hover {
+  background-color: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+  .dex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dex-left, .dex-right {
+    text-align: center;
+  }
+
+  .stat span:first-child {
+    width: 90px;
+  }
+}
