@@ -1,7 +1,4 @@
-// src/utils/createCard.js
 import { navigateTo } from '../router.js';
-
-
 
 export function createPokemonCard(pokemon) {
 

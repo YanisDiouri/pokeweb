@@ -4,7 +4,10 @@ export async function render(container) {
 
   container.innerHTML = `
   <div class="dex-container">
-    <div class="dex-left">
+  <div class="button">
+    <button onclick="history.back()">← Back</button>
+  </div>
+  <div class="dex-left">
       <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}" />
     </div>
     <div class="dex-right">
@@ -21,7 +24,7 @@ export async function render(container) {
       <div class="stats">
         ${pokemon.stats.map(stat => `
           <div class="stat">
-            <span>${stat.stat.name}</span>
+            <span>${stat.stat.name.toUpperCase()}</span>
             <div class="bar">
               <div class="fill" style="width: ${(stat.base_stat / 255) * 100}%"></div>
             </div>
@@ -29,8 +32,6 @@ export async function render(container) {
           </div>
         `).join('')}
       </div>
-
-      <button onclick="history.back()">← Back</button>
     </div>
   </div>
 `;

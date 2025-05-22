@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-  background-color: #f9fafb;
+  background-color: #739dc7;
   color: #1f2937;
 }
 
 header {
-  background-color: #fff;
+  background-color: #4184c7;
   padding: 16px 32px;
   display: flex;
   gap: 16px;
@@ -15,6 +15,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
+}
+
+header h2:first-child{
+  color: gold;
+}
+
+header h2 {
+  color: white;
 }
 
 header input,
@@ -36,14 +44,14 @@ header select:focus {
 }
 
 header button {
-  background-color: #3b82f6;
-  color: #fff;
+  background-color: rgb(17, 0, 255);
+  color: white;
   border: none;
   font-weight: 500;
 }
 
 header button:hover {
-  background-color: #2563eb;
+  background-color: rgb(54, 40, 253);
 }
 
 /* Grille Pokémon */
@@ -143,7 +151,7 @@ header button:hover {
   display: flex;
   gap: 40px;
   padding: 40px;
-  background: #f9fafb;
+  background: #fdffb8;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -185,7 +193,7 @@ header button:hover {
   border-radius: 12px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: white;
+  color: black;
   text-transform: uppercase;
 }
 
@@ -196,6 +204,10 @@ header button:hover {
 .type-badge.flying { background-color: #a890f0; }
 .type-badge.normal { background-color: #15d8d2; }
 .type-badge.electric { background-color: #f3d708; }
+.type-badge.poison { background-color: #f30808; }
+.type-badge.bug { background-color: #08f347; }
+
+
 
 .stats {
   margin-top: 20px;
@@ -233,7 +245,7 @@ header button:hover {
   color: #374151;
 }
 
-.dex-right button {
+.dex-container button {
   margin-top: 25px;
   padding: 10px 18px;
   background-color: #f3f4f6;
@@ -244,7 +256,7 @@ header button:hover {
   transition: background-color 0.2s ease;
 }
 
-.dex-right button:hover {
+.dex-container button:hover {
   background-color: #e5e7eb;
 }
 
