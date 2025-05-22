@@ -119,7 +119,7 @@ npm run dev
 PokéAPI --> https://pokeapi.co/api/v2/pokemon?limit=50
 
 Cursus --> WebAdvancedEhbLes
-
+ChatGPT
     ![ChatGPT](images/chatgpt1.png)
     ![ChatGPT](images/chatgpt2.png)
     ![ChatGPT](images/chatgpt3.png)
