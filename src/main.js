@@ -19,7 +19,7 @@ document.getElementById("toggleFavoritesBtn").addEventListener("click", () => {
   }
 });
 
-// Recherche
+
 document.getElementById("search").addEventListener("input", (e) => {
   const query = e.target.value.toLowerCase();
   document.querySelectorAll(".pokemon-card").forEach(card => {
@@ -28,9 +28,9 @@ document.getElementById("search").addEventListener("input", (e) => {
   });
 });
 
-// Tri
+
 document.getElementById("sortOptions").addEventListener("change", async (e) => {
-  if (location.pathname !== '/') return; // Ne tri que sur la page d'accueil
+  if (location.pathname !== '/') return;
 
   const criterion = e.target.value;
   try {
@@ -50,7 +50,6 @@ document.getElementById("sortOptions").addEventListener("change", async (e) => {
   }
 });
 
-// Filtrage par type
 document.getElementById("typeFilter").addEventListener("change", (e) => {
   if (location.pathname !== '/') return;
 
