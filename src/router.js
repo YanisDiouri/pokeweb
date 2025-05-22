@@ -1,5 +1,3 @@
-// src/router.js
-
 const routes = {
     '/': () => import('./pages/home.js'),
     '/favorites': () => import('./pages/favorites.js'),

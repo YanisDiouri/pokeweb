@@ -54,7 +54,6 @@ header button:hover {
   background-color: rgb(54, 40, 253);
 }
 
-/* Grille Pokémon */
 .pokemon-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -64,7 +63,6 @@ header button:hover {
   margin: auto;
 }
 
-/* Carte Pokémon */
 .pokemon-card {
   background-color: #ffffff;
   border: 1px solid #e0e0e0;
@@ -104,7 +102,6 @@ header button:hover {
   text-align: left;
 }
 
-/* Liste stats */
 .pokemon-details ul {
   list-style: none;
   padding-left: 0;
@@ -116,7 +113,6 @@ header button:hover {
   color: #333;
 }
 
-/* Bouton étoile favori */
 .fav-btn {
   background: none;
   border: none;
@@ -206,7 +202,6 @@ header button:hover {
 .type-badge.electric { background-color: #f3d708; }
 .type-badge.poison { background-color: #f30808; }
 .type-badge.bug { background-color: #08f347; }
-
 
 
 .stats {
