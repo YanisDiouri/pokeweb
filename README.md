@@ -1,4 +1,4 @@
-# PokéWeb
+# PokéWeb project
 
 Een moderne webapplicatie waarmee je Pokémon kunt ontdekken, filteren, bekijken en opslaan in je favorieten. De app is gebouwd met moderne JavaScript (ES6+), volledig als een Single Page Application (SPA), zonder backend en volledig gevoed door de PokéAPI.
 
